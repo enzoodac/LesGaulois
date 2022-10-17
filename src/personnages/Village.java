@@ -36,27 +36,34 @@ public class Village {
 
 	public static void main(String[] args) {
 
-		Village village = new Village("Village des Irréductibles", 30);
+		Village village = new Village("Village des Irrï¿½ductibles", 30);
 
 //		Gaulois gaulois = village.trouverHabitant(30);
 //		Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 30
 //		at personnages.Village.trouverHabitant(Village.java:33)
 //		at personnages.Village.main(Village.java:41)
-//		On dépasse les bornes du tableau (index max = 29)
+//		On dï¿½passe les bornes du tableau (index max = 29)
 
 		Chef chef = new Chef("Abraracourcix", 6, village);
-		Gaulois asterix = new Gaulois("Astérix", 8);
+		Gaulois asterix = new Gaulois("Astï¿½rix", 8);
 		village.ajouterHabitant(asterix);
 		village.setChef(chef);
 //		Gaulois gaulois = village.trouverHabitant(1);
 //		null;
-//		null = valeur par défaut dans un tableau non complété;
-		System.out.println(gaulois);
+//		null = valeur par dï¿½faut dans un tableau non complï¿½tï¿½;
+		Gaulois obelix = new  Gaulois("ObÃ©lix",25);
+		village.ajouterHabitant(obelix);
+		village.afficherVillageois();
 
 	}
 
 	public void afficherVillageois() {
-		
+		int i=0;
+		System.out.println("Dans le village du chef " + chef.getNom() + " vivent les lÃ©gendaires gaulois : ");
+		while(i<nbVillageois) {
+			System.out.println("- " +villageois[i].getNom());
+			i++;
+		}
 	}
 	
 }
